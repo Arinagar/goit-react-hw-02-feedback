@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 
 export const FeedbackOptions = ({ buttons, onclickIncrement }) => (
   <>
-    <h2>Please leave feedback</h2>;
+    <h2>Please leave feedback</h2>
     {buttons.map(element => (
       <button
-        key={Date.now()}
+        key={element}
         type="button"
         onClick={() => onclickIncrement(element)}
       >
@@ -15,3 +15,8 @@ export const FeedbackOptions = ({ buttons, onclickIncrement }) => (
     ))}
   </>
 );
+
+FeedbackOptions.propTypes = {
+  buttons: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  onclickIncrement: PropTypes.func.isRequired,
+};
