@@ -1,18 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import css from './FeedbackOptions.module.css';
 
 export const FeedbackOptions = ({ buttons, onclickIncrement }) => (
   <>
     <h2>Please leave feedback</h2>
-    {buttons.map(element => (
-      <button
-        key={element}
-        type="button"
-        onClick={() => onclickIncrement(element)}
-      >
-        {element}
-      </button>
-    ))}
+    <ul className={css.buttons_list}>
+      {buttons.map(element => (
+        <li key={element}>
+          <button
+            type="button"
+            onClick={() => onclickIncrement(element)}
+            className={css[element]}
+          >
+            {element}
+          </button>
+        </li>
+      ))}
+    </ul>
   </>
 );
 

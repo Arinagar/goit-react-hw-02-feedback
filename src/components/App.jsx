@@ -2,7 +2,7 @@ import { React, Component } from 'react';
 import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Statistics } from './Statistics/Statistics';
 import { Notification } from './Notification/Notification';
-
+import css from './Section/Section.module.css';
 export class App extends Component {
   state = {
     good: 0,
@@ -38,7 +38,7 @@ export class App extends Component {
     const posPerc = this.countPositiveFeedbackPercentage();
 
     return (
-      <section>
+      <section className={css.section}>
         <FeedbackOptions
           buttons={buttons}
           onclickIncrement={this.onclickIncrement}
